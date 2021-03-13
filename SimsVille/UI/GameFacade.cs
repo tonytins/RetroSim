@@ -101,10 +101,7 @@ namespace FSO.Client
 
         public static void TriggerContentLoaderReady()
         {
-            if (OnContentLoaderReady != null)
-            {
-                OnContentLoaderReady();
-            }
+            OnContentLoaderReady?.Invoke();
         }
 
         public static TimeSpan GameRunTime

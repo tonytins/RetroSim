@@ -441,7 +441,7 @@ namespace FSO.SimAntics
                 bhav.RuntimeVer++;
                 if (_Assembled.ContainsKey(bhav)) _Assembled.Remove(bhav);
             }
-            if (OnBHAVChange != null) OnBHAVChange();
+            OnBHAVChange?.Invoke();
         }
 
         /// <summary>
@@ -450,7 +450,7 @@ namespace FSO.SimAntics
         /// <param name="info">The dialog info to pass along.</param>
         public void SignalDialog(VMDialogInfo info)
         {
-            if (OnDialog != null) OnDialog(info);
+            OnDialog?.Invoke(info);
         }
 
         /// <summary>
@@ -459,12 +459,12 @@ namespace FSO.SimAntics
         /// <param name="info">The chat event to pass along.</param>
         public void SignalChatEvent(VMChatEvent evt)
         {
-            if (OnChatEvent != null) OnChatEvent(evt);
+            OnChatEvent?.Invoke(evt);
         }
 
         public void SignalEODMessage(VMNetEODMessageCmd msg)
         {
-            if (OnEODMessage != null) OnEODMessage(msg);
+            OnEODMessage?.Invoke(msg);
         }
 
         public VMSandboxRestoreState Sandbox()
@@ -633,7 +633,7 @@ namespace FSO.SimAntics
                 }
             }
 
-            if (OnFullRefresh != null) OnFullRefresh();
+            OnFullRefresh?.Invoke();
         }
 
         internal void BreakpointHit(VMEntity entity)

@@ -273,7 +273,7 @@ namespace FSO.Client.UI.Panels
 
         void SellBackButton_OnButtonClick(UIElement button)
         {
-            if (OnSellBackClicked != null) OnSellBackClicked(button);
+            OnSellBackClicked?.Invoke(button);
         }
 
         void SpecificTabButton_OnButtonClick(UIElement button)
@@ -323,7 +323,7 @@ namespace FSO.Client.UI.Panels
 
         private void InventoryButton_OnButtonClick(UIElement button)
         {
-            if (OnInventoryClicked != null) OnInventoryClicked(button);
+            OnInventoryClicked?.Invoke(button);
         }
 
         public void SetInfo(VM vm, VMEntity entity, bool bought)

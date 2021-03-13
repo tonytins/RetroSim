@@ -177,10 +177,7 @@ namespace FSO.Client.UI.Controls
             set
             {
                 SelectedIndex = m_DataProvider.IndexOf(value);
-                if (OnChange != null)
-                {
-                    OnChange(this);
-                }
+                OnChange?.Invoke(this);
             }
         }
 

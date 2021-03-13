@@ -187,7 +187,7 @@ namespace FSO.Client.UI.Controls
                 case UIMouseEventType.MouseDown:
                     if (m_DoubleClickTime > 0)
                     {
-                        if (OnDoubleClick != null) OnDoubleClick(this);
+                        OnDoubleClick?.Invoke(this);
                         m_DoubleClickTime = 0;
                     }
                     else m_DoubleClickTime = 20;
@@ -237,10 +237,7 @@ namespace FSO.Client.UI.Controls
         {
             m_SelectedRow = index;
 
-            if (OnChange != null)
-            {
-                OnChange(this);
-            }
+            OnChange?.Invoke(this);
         }
 
         private int GetRowUnderMouse(UpdateState update)

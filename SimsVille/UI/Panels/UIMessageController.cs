@@ -52,7 +52,7 @@ namespace FSO.Client.UI.Panels
         public void SendMessage(string message, string GUID)
         {
             HITVM.Get().PlaySoundEvent(UISounds.CallSend);
-            if (OnSendMessage != null) OnSendMessage(message, GUID);
+            OnSendMessage?.Invoke(message, GUID);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace FSO.Client.UI.Panels
         public void SendLetter(string message, string subject, string destinationUser)
         {
             HITVM.Get().PlaySoundEvent(UISounds.LetterSend);
-            if (OnSendLetter != null) OnSendLetter(message, subject, destinationUser);
+            OnSendLetter?.Invoke(message, subject, destinationUser);
         }
 
         /// <summary>

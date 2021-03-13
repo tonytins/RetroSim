@@ -456,7 +456,7 @@ namespace TargaImage
                 {
                     // clear all 
                     this.ClearAll();
-                    throw ex;
+                    throw;
                 }
             }
             else
@@ -529,7 +529,7 @@ namespace TargaImage
                 catch (Exception ex)
                 {
                     this.ClearAll();
-                    throw ex;
+                    throw;
                 }
 
 
@@ -590,7 +590,7 @@ namespace TargaImage
                             catch (Exception ex)
                             {
                                 this.ClearAll();
-                                throw ex;
+                                throw;
                             }
 
 
@@ -731,7 +731,7 @@ namespace TargaImage
                     catch (Exception ex)
                     {
                         this.ClearAll();
-                        throw ex;
+                        throw;
                     }
                 }
             }

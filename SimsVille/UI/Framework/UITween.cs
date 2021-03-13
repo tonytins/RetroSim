@@ -144,10 +144,7 @@ namespace FSO.Client.UI.Framework
             {
                 RenderPercent(1.0f);
             }
-            if (OnComplete != null)
-            {
-                OnComplete(this, 1.0f);
-            }
+            OnComplete?.Invoke(this, 1.0f);
             m_Owner.Stop(this, false);
         }
 
