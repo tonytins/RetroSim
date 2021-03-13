@@ -1,8 +1,4 @@
-﻿using FSO.LotView;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using FSO.LotView;
 
 namespace FSO.Client
 {
@@ -16,17 +12,17 @@ namespace FSO.Client
 
         public void Start(bool useDX)
         {
-			Game = new TSOGame();
+            using var game = new TSOGame();
+            Game = game;
             GameFacade.DirectX = useDX;
-			World.DirectX = useDX;
-            Game.Run();
-            Game.Dispose();
+            World.DirectX = useDX;
+            game.Run();
         }
 
-		public void SetPath(string path)
-		{
-			GlobalSettings.Default.StartupPath = path;
+        public void SetPath(string path)
+        {
+            GlobalSettings.Default.StartupPath = path;
             GlobalSettings.Default.Windowed = false;
-		}
-	}
+        }
+    }
 }

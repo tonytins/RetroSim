@@ -1,4 +1,4 @@
-﻿/*
+/*
  * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/. 
@@ -6,14 +6,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
-using System.IO;
-using Microsoft.Xna.Framework;
-using System.Drawing;
-using System.Runtime.InteropServices;
-using Paloma;
+using targo = TargaImage;
 
 namespace FSO.Files
 {
@@ -142,13 +141,13 @@ namespace FSO.Files
                 {
                     try
                     {
-                        var tga = new Paloma.TargaImage(str);
+                        var tga = new targo.TargaImage(str);
                         var tex = new Texture2D(gd, tga.Image.Width, tga.Image.Height);
 
                         //image loaded into bitmap
                         bool premultiplied = false;
 
-                        var data = tga.Image.LockBits(new System.Drawing.Rectangle(0, 0, tga.Image.Width, tga.Image.Height), System.Drawing.Imaging.ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                        var data = tga.BitmapImage.LockBits(new Rectangle(0, 0, tga.Image.Width, tga.Image.Height), System.Drawing.Imaging.ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
                         var bytes = new byte[data.Height * data.Stride];
 
                         // copy the bytes from bitmap to array
@@ -173,7 +172,8 @@ namespace FSO.Files
                     {
                         return null; //bad tga
                     }
-                } else
+                }
+                else
                 {
                     //anything else
                     try
@@ -190,33 +190,34 @@ namespace FSO.Files
             }
         }
 
-		public static void ManualTextureMaskSingleThreaded(ref Texture2D Texture, uint[] ColorsFrom)
-		{
-			var ColorTo = Microsoft.Xna.Framework.Color.Transparent.PackedValue;
+        public static void ManualTextureMaskSingleThreaded(ref Texture2D Texture, uint[] ColorsFrom)
+        {
+            var ColorTo = Microsoft.Xna.Framework.Color.Transparent.PackedValue;
 
-			var size = Texture.Width * Texture.Height;
-			uint[] buffer = new uint[size];
+            var size = Texture.Width * Texture.Height;
+            uint[] buffer = new uint[size];
 
-			Texture.GetData<uint>(buffer);
+            Texture.GetData<uint>(buffer);
 
-			var didChange = false;
+            var didChange = false;
 
-			for (int i = 0; i < size; i++)
-			{
+            for (int i = 0; i < size; i++)
+            {
 
-				if (ColorsFrom.Contains(buffer[i]))
-				{
-					didChange = true;
-					buffer[i] = ColorTo;
-				}
-			}
+                if (ColorsFrom.Contains(buffer[i]))
+                {
+                    didChange = true;
+                    buffer[i] = ColorTo;
+                }
+            }
 
-			if (didChange)
-			{
-				Texture.SetData(buffer, 0, size);
-			}
-			else return;
-		}
+            if (didChange)
+            {
+                Texture.SetData(buffer, 0, size);
+            }
+            else
+                return;
+        }
 
-	}
+    }
 }
