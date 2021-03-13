@@ -3,7 +3,7 @@
         <TargetFramework>net5.0-windows</TargetFramework>
         <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
         <OutputType>Exe</OutputType>
-        <Nullable>warning</Nullable>
+        <Nullable>warnings</Nullable>
         <RootNamespace>FSO.Client</RootNamespace>
         <MonoGamePlatform>Linux</MonoGamePlatform>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -43,6 +43,24 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Content Include="Content\DX\Effects\2DWorldBatch.xnb">
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Content\DX\Effects\colorpoly2D.xnb">
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Content\DX\Effects\GrassShader.xnb">
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Content\DX\Effects\PixShader.xnb">
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Content\DX\Effects\VerShader.xnb">
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Content\DX\Effects\Vitaboy.xnb">
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </Content>
         <Content Include="Icon.ico" />
     </ItemGroup>
     <ItemGroup>
@@ -64,8 +82,15 @@
         <Compile Remove="World\model\RoofTile.cs" />
     </ItemGroup>
     <ItemGroup>
+      <None Remove="Content\DX\Effects\2DWorldBatch.xnb" />
+      <None Remove="Content\DX\Effects\colorpoly2D.xnb" />
+      <None Remove="Content\DX\Effects\GrassShader.xnb" />
+      <None Remove="Content\DX\Effects\PixShader.xnb" />
+      <None Remove="Content\DX\Effects\VerShader.xnb" />
+      <None Remove="Content\DX\Effects\Vitaboy.xnb" />
+    </ItemGroup>
+    <ItemGroup>
         <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
-        <PackageReference Include="MonoGame.Framework.WindowsDX" Version="3.8.0.1641" />
         <PackageReference Include="sdl2" Version="2.0.5" />
         <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
         <PackageReference Include="System.ServiceModel.Duplex" Version="4.8.1" />
@@ -105,24 +130,6 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="Content\downloads.xml">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Content\DX\Effects\2DWorldBatch.xnb">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Content\DX\Effects\colorpoly2D.xnb">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Content\DX\Effects\GrassShader.xnb">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Content\DX\Effects\PixShader.xnb">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Content\DX\Effects\VerShader.xnb">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Content\DX\Effects\Vitaboy.xnb">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="Content\DX\Fonts\SimsFont.xnb">

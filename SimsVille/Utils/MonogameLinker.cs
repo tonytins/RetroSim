@@ -1,9 +1,5 @@
-﻿using FSO.LotView;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace FSO.Client.Utils
 {
@@ -20,7 +16,8 @@ namespace FSO.Client.Utils
             PlatformID pid = os.Platform;
 
             bool linux = false;
-            if (pid == PlatformID.MacOSX || pid == PlatformID.Unix) linux = true;
+            if (pid == PlatformID.MacOSX || pid == PlatformID.Unix)
+                linux = true;
 
             if (linux && preferDX11)
             {
@@ -28,9 +25,10 @@ namespace FSO.Client.Utils
                 preferDX11 = false;
             }
 
-            try {
+            try
+            {
                 string contentDir = "Content/OGL/";
-                string monogameDir = "Monogame/WindowsGL/";
+                string monogameDir = "./";
                 if (!linux)
                 {
                     if (preferDX11)
@@ -49,10 +47,10 @@ namespace FSO.Client.Utils
                 }
 
                 //DirectoryCopy(contentDir, "Content/", true);
-                if (File.Exists("Monogame.Framework.dll")) File.Delete("Monogame.Framework.dll");
 
-                AssemblyDir = monogameDir;
-            } catch (Exception e)
+                AssemblyDir = Environment.CurrentDirectory;
+            }
+            catch (Exception e)
             {
                 e = new Exception();
                 //MessageBox.Show("Unable to link Monogame. Continuing... ("+e.ToString()+")");
