@@ -115,10 +115,7 @@ namespace FSO.Client.UI.Controls
         private void InternalSetPage(int page)
         {
             SelectedPage = page;
-            if (OnPageChanged != null)
-            {
-                OnPageChanged(this, m_SelectedPage);
-            }
+            OnPageChanged?.Invoke(this, m_SelectedPage);
         }
 
         void UIPaginationBar_OnButtonClick(UIElement button)

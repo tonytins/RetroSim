@@ -1,0 +1,460 @@
+2021-03-12 19:19:30.848 -05:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-03-12 19:19:31.144 -05:00 [INF] Registered 1 extensions:
+	Default extension
+2021-03-12 19:19:35.509 -05:00 [INF] Initializing upgrade step Select an entrypoint
+2021-03-12 19:19:58.647 -05:00 [INF] Applying upgrade step Select an entrypoint
+2021-03-12 19:20:10.708 -05:00 [INF] Upgrade step Select an entrypoint applied successfully
+2021-03-12 19:20:19.343 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:20:29.412 -05:00 [INF] Applying upgrade step Select project to upgrade
+2021-03-12 19:20:31.197 -05:00 [INF] Upgrade step Select project to upgrade applied successfully
+2021-03-12 19:20:33.589 -05:00 [INF] Initializing upgrade step Back up project
+2021-03-12 19:21:07.188 -05:00 [INF] Applying upgrade step Back up project
+2021-03-12 19:21:11.772 -05:00 [INF] Backing up C:\Users\zc456\source\repos\simtactics-staging\sims.files to C:\Users\zc456\source\repos\simtactics-staging\sims.files.backup
+2021-03-12 19:21:13.139 -05:00 [INF] Project backed up to C:\Users\zc456\source\repos\simtactics-staging\sims.files.backup
+2021-03-12 19:21:13.141 -05:00 [INF] Upgrade step Back up project applied successfully
+2021-03-12 19:21:15.054 -05:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-03-12 19:21:19.167 -05:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-03-12 19:21:19.169 -05:00 [INF] Converting project file format with try-convert
+2021-03-12 19:21:19.606 -05:00 [INF] [try-convert] Unrecognized command or argument '--force-web-conversion'
+2021-03-12 19:21:19.613 -05:00 [INF] [try-convert] Usage:
+2021-03-12 19:21:19.619 -05:00 [INF] [try-convert]   try-convert [options]
+2021-03-12 19:21:19.644 -05:00 [INF] [try-convert] Options:
+2021-03-12 19:21:19.651 -05:00 [INF] [try-convert]   -?, -h, --help                                 Show help and usage information
+2021-03-12 19:21:19.654 -05:00 [INF] [try-convert]   -p, --project <project>                        The path to a project to convert [default: ]
+2021-03-12 19:21:19.656 -05:00 [INF] [try-convert]   -w, --workspace <workspace>                    The solution or project file to operate on. If a project is not specified, the command will search the current directory for one. [default: ]
+2021-03-12 19:21:19.657 -05:00 [INF] [try-convert]   -m, --msbuild-path <msbuild-path>              The path to an MSBuild.exe, if you prefer to use that [default: ]
+2021-03-12 19:21:19.660 -05:00 [INF] [try-convert]   -tfm, --target-framework <target-framework>    The name of the framework you would like to upgrade to. If unspecified, the default TFM for apps chosen will be the highest available one found on your machine, and the default TFM for libraries will be .NET Standard 2.0. [default: ]
+2021-03-12 19:21:19.663 -05:00 [INF] [try-convert]   --preview                                      Use preview SDKs as part of conversion [default: False]
+2021-03-12 19:21:19.663 -05:00 [ERR] [try-convert] Exited with non-success code: 1
+2021-03-12 19:21:19.665 -05:00 [INF] [try-convert]   --diff-only                                    Produces a diff of the project to convert; no conversion is done [default: False]
+2021-03-12 19:21:19.973 -05:00 [FTL] Conversion with try-convert failed. Make sure Try-Convert (version 0.7.157502 or higher) is installed and that your project does not use custom imports.
+2021-03-12 19:21:21.330 -05:00 [WRN] Upgrade step Convert project file to SDK style failed: "Failed": Conversion with try-convert failed.
+2021-03-12 19:21:26.103 -05:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-03-12 19:21:26.104 -05:00 [INF] Converting project file format with try-convert
+2021-03-12 19:21:26.325 -05:00 [INF] [try-convert] Unrecognized command or argument '--force-web-conversion'
+2021-03-12 19:21:26.332 -05:00 [INF] [try-convert] Usage:
+2021-03-12 19:21:26.339 -05:00 [INF] [try-convert]   try-convert [options]
+2021-03-12 19:21:26.365 -05:00 [INF] [try-convert] Options:
+2021-03-12 19:21:26.375 -05:00 [INF] [try-convert]   -?, -h, --help                                 Show help and usage information
+2021-03-12 19:21:26.377 -05:00 [INF] [try-convert]   -p, --project <project>                        The path to a project to convert [default: ]
+2021-03-12 19:21:26.379 -05:00 [INF] [try-convert]   -w, --workspace <workspace>                    The solution or project file to operate on. If a project is not specified, the command will search the current directory for one. [default: ]
+2021-03-12 19:21:26.381 -05:00 [INF] [try-convert]   -m, --msbuild-path <msbuild-path>              The path to an MSBuild.exe, if you prefer to use that [default: ]
+2021-03-12 19:21:26.383 -05:00 [INF] [try-convert]   -tfm, --target-framework <target-framework>    The name of the framework you would like to upgrade to. If unspecified, the default TFM for apps chosen will be the highest available one found on your machine, and the default TFM for libraries will be .NET Standard 2.0. [default: ]
+2021-03-12 19:21:26.385 -05:00 [INF] [try-convert]   --preview                                      Use preview SDKs as part of conversion [default: False]
+2021-03-12 19:21:26.385 -05:00 [ERR] [try-convert] Exited with non-success code: 1
+2021-03-12 19:21:26.386 -05:00 [INF] [try-convert]   --diff-only                                    Produces a diff of the project to convert; no conversion is done [default: False]
+2021-03-12 19:21:26.716 -05:00 [FTL] Conversion with try-convert failed. Make sure Try-Convert (version 0.7.157502 or higher) is installed and that your project does not use custom imports.
+2021-03-12 19:21:28.004 -05:00 [WRN] Upgrade step Convert project file to SDK style failed: "Failed": Conversion with try-convert failed.
+2021-03-12 19:21:34.549 -05:00 [INF] Skipping upgrade step Convert project file to SDK style
+2021-03-12 19:21:34.551 -05:00 [INF] Upgrade step Convert project file to SDK style skipped
+2021-03-12 19:21:37.390 -05:00 [INF] Initializing upgrade step Update TFM
+2021-03-12 19:21:42.037 -05:00 [INF] Applying upgrade step Update TFM
+2021-03-12 19:21:42.041 -05:00 [ERR] Unexpected error applying step
+System.NotImplementedException: Setting a TFM is only supported with SDK style projects
+   at Microsoft.DotNet.UpgradeAssistant.MSBuild.MSBuildProject.SetTFM(TargetFrameworkMoniker tfm) in /_/src/components/Microsoft.DotNet.UpgradeAssistant.MSBuild/MSBuildProject.File.cs:line 66
+   at Microsoft.DotNet.UpgradeAssistant.Steps.ProjectFormat.SetTFMStep.ApplyImplAsync(IUpgradeContext context, CancellationToken token) in /_/src/steps/Microsoft.DotNet.UpgradeAssistant.Steps.ProjectFormat/SetTFMStep.cs:line 47
+   at Microsoft.DotNet.UpgradeAssistant.UpgradeStep.ApplyAsync(IUpgradeContext context, CancellationToken token) in /_/src/common/Microsoft.DotNet.UpgradeAssistant.Abstractions/UpgradeStep.cs:line 169
+2021-03-12 19:21:45.716 -05:00 [INF] Applying upgrade step Update TFM
+2021-03-12 19:21:45.719 -05:00 [ERR] Unexpected error applying step
+System.NotImplementedException: Setting a TFM is only supported with SDK style projects
+   at Microsoft.DotNet.UpgradeAssistant.MSBuild.MSBuildProject.SetTFM(TargetFrameworkMoniker tfm) in /_/src/components/Microsoft.DotNet.UpgradeAssistant.MSBuild/MSBuildProject.File.cs:line 66
+   at Microsoft.DotNet.UpgradeAssistant.Steps.ProjectFormat.SetTFMStep.ApplyImplAsync(IUpgradeContext context, CancellationToken token) in /_/src/steps/Microsoft.DotNet.UpgradeAssistant.Steps.ProjectFormat/SetTFMStep.cs:line 47
+   at Microsoft.DotNet.UpgradeAssistant.UpgradeStep.ApplyAsync(IUpgradeContext context, CancellationToken token) in /_/src/common/Microsoft.DotNet.UpgradeAssistant.Abstractions/UpgradeStep.cs:line 169
+2021-03-12 19:21:49.038 -05:00 [INF] Skipping upgrade step Update TFM
+2021-03-12 19:21:49.040 -05:00 [INF] Upgrade step Update TFM skipped
+2021-03-12 19:21:51.046 -05:00 [INF] Initializing upgrade step Update NuGet packages
+2021-03-12 19:21:52.419 -05:00 [FTL] Package analysis failed (analyzer Duplicate reference analyzer
+2021-03-12 19:21:57.215 -05:00 [INF] Saving upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:21:59.658 -05:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-03-12 19:21:59.695 -05:00 [INF] Registered 1 extensions:
+	Default extension
+2021-03-12 19:22:01.647 -05:00 [INF] Loading upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:22:03.199 -05:00 [INF] Initializing upgrade step Back up project
+2021-03-12 19:22:03.204 -05:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-03-12 19:22:12.454 -05:00 [INF] Skipping upgrade step Convert project file to SDK style
+2021-03-12 19:22:12.456 -05:00 [INF] Upgrade step Convert project file to SDK style skipped
+2021-03-12 19:22:14.206 -05:00 [INF] Initializing upgrade step Update TFM
+2021-03-12 19:22:47.925 -05:00 [INF] Skipping upgrade step Update TFM
+2021-03-12 19:22:47.927 -05:00 [INF] Upgrade step Update TFM skipped
+2021-03-12 19:22:49.823 -05:00 [INF] Initializing upgrade step Update NuGet packages
+2021-03-12 19:22:51.356 -05:00 [FTL] Package analysis failed (analyzer Duplicate reference analyzer
+2021-03-12 19:22:51.367 -05:00 [INF] Applying upgrade step Update NuGet packages
+2021-03-12 19:22:53.122 -05:00 [FTL] Package analysis failed (analyzer Duplicate reference analyzer
+2021-03-12 19:22:53.125 -05:00 [WRN] Upgrade step Update NuGet packages failed: "Failed": Package analysis failed
+2021-03-12 19:22:54.325 -05:00 [ERR] Unknown selection: '22'
+2021-03-12 19:22:57.467 -05:00 [INF] Skipping upgrade step Update NuGet packages
+2021-03-12 19:22:57.469 -05:00 [INF] Upgrade step Update NuGet packages skipped
+2021-03-12 19:23:01.469 -05:00 [INF] Initializing upgrade step Add template files
+2021-03-12 19:23:01.498 -05:00 [INF] 0 expected template items needed
+2021-03-12 19:23:01.501 -05:00 [INF] Initializing upgrade step Upgrade app config files
+2021-03-12 19:23:01.531 -05:00 [INF] Found 0 app settings for upgrade: 
+2021-03-12 19:23:01.545 -05:00 [INF] 0 web page namespace imports need upgraded: 
+2021-03-12 19:23:01.547 -05:00 [INF] Initializing upgrade step Update C# source
+2021-03-12 19:23:03.269 -05:00 [INF] Initializing upgrade step Move to next project
+2021-03-12 19:23:12.012 -05:00 [INF] Applying upgrade step Move to next project
+2021-03-12 19:23:12.015 -05:00 [INF] Upgrade step Move to next project applied successfully
+2021-03-12 19:23:16.661 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:23:22.383 -05:00 [INF] Applying upgrade step Select project to upgrade
+2021-03-12 19:23:26.120 -05:00 [INF] Saving upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:23:28.321 -05:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-03-12 19:23:28.358 -05:00 [INF] Registered 1 extensions:
+	Default extension
+2021-03-12 19:23:30.224 -05:00 [INF] Loading upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:23:31.760 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:23:41.534 -05:00 [INF] Saving upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:23:43.342 -05:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-03-12 19:23:43.382 -05:00 [INF] Registered 1 extensions:
+	Default extension
+2021-03-12 19:23:45.255 -05:00 [INF] Loading upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:23:46.828 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:23:51.063 -05:00 [INF] Applying upgrade step Select project to upgrade
+2021-03-12 19:23:59.076 -05:00 [ERR] Unknown selection: '2'
+2021-03-12 19:24:01.918 -05:00 [INF] Saving upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:24:23.704 -05:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-03-12 19:24:23.744 -05:00 [INF] Registered 1 extensions:
+	Default extension
+2021-03-12 19:24:25.644 -05:00 [INF] Loading upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:24:27.851 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:24:35.671 -05:00 [INF] Applying upgrade step Select project to upgrade
+2021-03-12 19:24:41.485 -05:00 [INF] Upgrade step Select project to upgrade applied successfully
+2021-03-12 19:24:43.109 -05:00 [INF] Initializing upgrade step Back up project
+2021-03-12 19:24:45.260 -05:00 [INF] Applying upgrade step Back up project
+2021-03-12 19:24:47.397 -05:00 [INF] Backing up C:\Users\zc456\source\repos\simtactics-staging\sims.common to C:\Users\zc456\source\repos\simtactics-staging\sims.common.backup
+2021-03-12 19:24:48.438 -05:00 [INF] Project backed up to C:\Users\zc456\source\repos\simtactics-staging\sims.common.backup
+2021-03-12 19:24:48.440 -05:00 [INF] Upgrade step Back up project applied successfully
+2021-03-12 19:24:50.605 -05:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-03-12 19:24:52.668 -05:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-03-12 19:24:52.671 -05:00 [INF] Converting project file format with try-convert
+2021-03-12 19:24:52.888 -05:00 [INF] [try-convert] Unrecognized command or argument '--force-web-conversion'
+2021-03-12 19:24:52.894 -05:00 [INF] [try-convert] Usage:
+2021-03-12 19:24:52.901 -05:00 [INF] [try-convert]   try-convert [options]
+2021-03-12 19:24:52.921 -05:00 [INF] [try-convert] Options:
+2021-03-12 19:24:52.930 -05:00 [INF] [try-convert]   -?, -h, --help                                 Show help and usage information
+2021-03-12 19:24:52.933 -05:00 [INF] [try-convert]   -p, --project <project>                        The path to a project to convert [default: ]
+2021-03-12 19:24:52.935 -05:00 [INF] [try-convert]   -w, --workspace <workspace>                    The solution or project file to operate on. If a project is not specified, the command will search the current directory for one. [default: ]
+2021-03-12 19:24:52.937 -05:00 [INF] [try-convert]   -m, --msbuild-path <msbuild-path>              The path to an MSBuild.exe, if you prefer to use that [default: ]
+2021-03-12 19:24:52.939 -05:00 [INF] [try-convert]   -tfm, --target-framework <target-framework>    The name of the framework you would like to upgrade to. If unspecified, the default TFM for apps chosen will be the highest available one found on your machine, and the default TFM for libraries will be .NET Standard 2.0. [default: ]
+2021-03-12 19:24:52.940 -05:00 [ERR] [try-convert] Exited with non-success code: 1
+2021-03-12 19:24:52.942 -05:00 [INF] [try-convert]   --preview                                      Use preview SDKs as part of conversion [default: False]
+2021-03-12 19:24:53.275 -05:00 [FTL] Conversion with try-convert failed. Make sure Try-Convert (version 0.7.157502 or higher) is installed and that your project does not use custom imports.
+2021-03-12 19:24:54.613 -05:00 [WRN] Upgrade step Convert project file to SDK style failed: "Failed": Conversion with try-convert failed.
+2021-03-12 19:24:57.110 -05:00 [INF] Skipping upgrade step Convert project file to SDK style
+2021-03-12 19:24:57.111 -05:00 [INF] Upgrade step Convert project file to SDK style skipped
+2021-03-12 19:24:58.711 -05:00 [INF] Initializing upgrade step Update TFM
+2021-03-12 19:25:02.045 -05:00 [INF] Applying upgrade step Update TFM
+2021-03-12 19:25:02.049 -05:00 [ERR] Unexpected error applying step
+System.NotImplementedException: Setting a TFM is only supported with SDK style projects
+   at Microsoft.DotNet.UpgradeAssistant.MSBuild.MSBuildProject.SetTFM(TargetFrameworkMoniker tfm) in /_/src/components/Microsoft.DotNet.UpgradeAssistant.MSBuild/MSBuildProject.File.cs:line 66
+   at Microsoft.DotNet.UpgradeAssistant.Steps.ProjectFormat.SetTFMStep.ApplyImplAsync(IUpgradeContext context, CancellationToken token) in /_/src/steps/Microsoft.DotNet.UpgradeAssistant.Steps.ProjectFormat/SetTFMStep.cs:line 47
+   at Microsoft.DotNet.UpgradeAssistant.UpgradeStep.ApplyAsync(IUpgradeContext context, CancellationToken token) in /_/src/common/Microsoft.DotNet.UpgradeAssistant.Abstractions/UpgradeStep.cs:line 169
+2021-03-12 19:25:03.828 -05:00 [INF] Skipping upgrade step Update TFM
+2021-03-12 19:25:03.829 -05:00 [INF] Upgrade step Update TFM skipped
+2021-03-12 19:25:05.774 -05:00 [INF] Initializing upgrade step Update NuGet packages
+2021-03-12 19:25:07.174 -05:00 [FTL] Package analysis failed (analyzer Duplicate reference analyzer
+2021-03-12 19:25:14.061 -05:00 [INF] Skipping upgrade step Update NuGet packages
+2021-03-12 19:25:14.063 -05:00 [INF] Upgrade step Update NuGet packages skipped
+2021-03-12 19:25:17.877 -05:00 [INF] Initializing upgrade step Add template files
+2021-03-12 19:25:17.898 -05:00 [INF] 0 expected template items needed
+2021-03-12 19:25:17.900 -05:00 [INF] Initializing upgrade step Update C# source
+2021-03-12 19:25:19.812 -05:00 [INF] Initializing upgrade step Move to next project
+2021-03-12 19:25:24.973 -05:00 [INF] Applying upgrade step Move to next project
+2021-03-12 19:25:24.975 -05:00 [INF] Upgrade step Move to next project applied successfully
+2021-03-12 19:25:26.254 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:25:31.532 -05:00 [INF] Applying upgrade step Select project to upgrade
+2021-03-12 19:25:34.845 -05:00 [INF] Upgrade step Select project to upgrade applied successfully
+2021-03-12 19:25:35.862 -05:00 [INF] Initializing upgrade step Back up project
+2021-03-12 19:25:38.086 -05:00 [INF] Applying upgrade step Back up project
+2021-03-12 19:25:39.204 -05:00 [INF] Backing up C:\Users\zc456\source\repos\simtactics-staging\SimsVille to C:\Users\zc456\source\repos\simtactics-staging\SimsVille.backup
+2021-03-12 19:25:49.553 -05:00 [INF] Project backed up to C:\Users\zc456\source\repos\simtactics-staging\SimsVille.backup
+2021-03-12 19:25:49.555 -05:00 [INF] Upgrade step Back up project applied successfully
+2021-03-12 19:25:49.558 -05:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-03-12 19:25:51.940 -05:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-03-12 19:25:51.943 -05:00 [INF] Converting project file format with try-convert
+2021-03-12 19:25:52.156 -05:00 [INF] [try-convert] Unrecognized command or argument '--force-web-conversion'
+2021-03-12 19:25:52.162 -05:00 [INF] [try-convert] Usage:
+2021-03-12 19:25:52.169 -05:00 [INF] [try-convert]   try-convert [options]
+2021-03-12 19:25:52.192 -05:00 [INF] [try-convert] Options:
+2021-03-12 19:25:52.200 -05:00 [INF] [try-convert]   -?, -h, --help                                 Show help and usage information
+2021-03-12 19:25:52.202 -05:00 [INF] [try-convert]   -p, --project <project>                        The path to a project to convert [default: ]
+2021-03-12 19:25:52.205 -05:00 [INF] [try-convert]   -w, --workspace <workspace>                    The solution or project file to operate on. If a project is not specified, the command will search the current directory for one. [default: ]
+2021-03-12 19:25:52.206 -05:00 [INF] [try-convert]   -m, --msbuild-path <msbuild-path>              The path to an MSBuild.exe, if you prefer to use that [default: ]
+2021-03-12 19:25:52.208 -05:00 [INF] [try-convert]   -tfm, --target-framework <target-framework>    The name of the framework you would like to upgrade to. If unspecified, the default TFM for apps chosen will be the highest available one found on your machine, and the default TFM for libraries will be .NET Standard 2.0. [default: ]
+2021-03-12 19:25:52.210 -05:00 [ERR] [try-convert] Exited with non-success code: 1
+2021-03-12 19:25:52.211 -05:00 [INF] [try-convert]   --preview                                      Use preview SDKs as part of conversion [default: False]
+2021-03-12 19:25:52.514 -05:00 [FTL] Conversion with try-convert failed. Make sure Try-Convert (version 0.7.157502 or higher) is installed and that your project does not use custom imports.
+2021-03-12 19:25:53.962 -05:00 [WRN] Upgrade step Convert project file to SDK style failed: "Failed": Conversion with try-convert failed.
+2021-03-12 19:25:57.628 -05:00 [INF] Skipping upgrade step Convert project file to SDK style
+2021-03-12 19:25:57.630 -05:00 [INF] Upgrade step Convert project file to SDK style skipped
+2021-03-12 19:25:58.342 -05:00 [INF] Initializing upgrade step Update TFM
+2021-03-12 19:25:58.345 -05:00 [ERR] Unexpected error initializing step
+System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.ThrowHelper.ThrowNoMatchException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Microsoft.DotNet.UpgradeAssistant.MSBuild.MSBuildProject.get_TFM() in /_/src/components/Microsoft.DotNet.UpgradeAssistant.MSBuild/MSBuildProject.cs:line 266
+   at Microsoft.DotNet.UpgradeAssistant.MSBuild.MSBuildTargetTFMSelector.GetNetStandardTFM(IProject project) in /_/src/components/Microsoft.DotNet.UpgradeAssistant.MSBuild/MSBuildTargetTFMSelector.cs:line 93
+   at Microsoft.DotNet.UpgradeAssistant.MSBuild.MSBuildTargetTFMSelector.SelectTFM(IProject project) in /_/src/components/Microsoft.DotNet.UpgradeAssistant.MSBuild/MSBuildTargetTFMSelector.cs:line 39
+   at Microsoft.DotNet.UpgradeAssistant.Steps.ProjectFormat.SetTFMStep.InitializeImplAsync(IUpgradeContext context, CancellationToken token) in /_/src/steps/Microsoft.DotNet.UpgradeAssistant.Steps.ProjectFormat/SetTFMStep.cs:line 60
+   at Microsoft.DotNet.UpgradeAssistant.UpgradeStep.InitializeAsync(IUpgradeContext context, CancellationToken token) in /_/src/common/Microsoft.DotNet.UpgradeAssistant.Abstractions/UpgradeStep.cs:line 131
+2021-03-12 19:26:00.523 -05:00 [INF] Skipping upgrade step Update TFM
+2021-03-12 19:26:00.526 -05:00 [INF] Upgrade step Update TFM skipped
+2021-03-12 19:26:02.230 -05:00 [INF] Initializing upgrade step Update NuGet packages
+2021-03-12 19:26:03.663 -05:00 [FTL] Package analysis failed (analyzer Duplicate reference analyzer
+2021-03-12 19:26:03.671 -05:00 [INF] Applying upgrade step Update NuGet packages
+2021-03-12 19:26:05.485 -05:00 [FTL] Package analysis failed (analyzer Duplicate reference analyzer
+2021-03-12 19:26:05.488 -05:00 [WRN] Upgrade step Update NuGet packages failed: "Failed": Package analysis failed
+2021-03-12 19:26:07.572 -05:00 [INF] Skipping upgrade step Update NuGet packages
+2021-03-12 19:26:07.574 -05:00 [INF] Upgrade step Update NuGet packages skipped
+2021-03-12 19:26:10.909 -05:00 [INF] Initializing upgrade step Add template files
+2021-03-12 19:26:10.912 -05:00 [INF] 0 expected template items needed
+2021-03-12 19:26:10.913 -05:00 [INF] Initializing upgrade step Upgrade app config files
+2021-03-12 19:26:10.928 -05:00 [INF] Found 0 app settings for upgrade: 
+2021-03-12 19:26:10.937 -05:00 [INF] 0 web page namespace imports need upgraded: 
+2021-03-12 19:26:10.940 -05:00 [INF] Initializing upgrade step Update C# source
+2021-03-12 19:26:14.652 -05:00 [INF] Initializing upgrade step Move to next project
+2021-03-12 19:26:26.983 -05:00 [INF] Saving upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:33:02.102 -05:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-03-12 19:33:02.146 -05:00 [INF] Registered 1 extensions:
+	Default extension
+2021-03-12 19:33:04.257 -05:00 [INF] Loading upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:33:06.012 -05:00 [INF] Initializing upgrade step Back up project
+2021-03-12 19:33:13.382 -05:00 [INF] Skipping upgrade step Back up project
+2021-03-12 19:33:13.384 -05:00 [INF] Upgrade step Back up project skipped
+2021-03-12 19:33:15.447 -05:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-03-12 19:33:17.655 -05:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-03-12 19:33:17.658 -05:00 [INF] Converting project file format with try-convert
+2021-03-12 19:33:17.895 -05:00 [INF] [try-convert] Unrecognized command or argument '--force-web-conversion'
+2021-03-12 19:33:17.903 -05:00 [INF] [try-convert] Usage:
+2021-03-12 19:33:17.909 -05:00 [INF] [try-convert]   try-convert [options]
+2021-03-12 19:33:17.934 -05:00 [INF] [try-convert] Options:
+2021-03-12 19:33:17.943 -05:00 [INF] [try-convert]   -?, -h, --help                                 Show help and usage information
+2021-03-12 19:33:17.946 -05:00 [INF] [try-convert]   -p, --project <project>                        The path to a project to convert [default: ]
+2021-03-12 19:33:17.947 -05:00 [INF] [try-convert]   -w, --workspace <workspace>                    The solution or project file to operate on. If a project is not specified, the command will search the current directory for one. [default: ]
+2021-03-12 19:33:17.950 -05:00 [INF] [try-convert]   -m, --msbuild-path <msbuild-path>              The path to an MSBuild.exe, if you prefer to use that [default: ]
+2021-03-12 19:33:17.952 -05:00 [INF] [try-convert]   -tfm, --target-framework <target-framework>    The name of the framework you would like to upgrade to. If unspecified, the default TFM for apps chosen will be the highest available one found on your machine, and the default TFM for libraries will be .NET Standard 2.0. [default: ]
+2021-03-12 19:33:17.954 -05:00 [INF] [try-convert]   --preview                                      Use preview SDKs as part of conversion [default: False]
+2021-03-12 19:33:17.956 -05:00 [INF] [try-convert]   --diff-only                                    Produces a diff of the project to convert; no conversion is done [default: False]
+2021-03-12 19:33:17.957 -05:00 [ERR] [try-convert] Exited with non-success code: 1
+2021-03-12 19:33:17.958 -05:00 [INF] [try-convert]   --no-backup                                    Converts projects and does not create a backup of the originals. [default: False]
+2021-03-12 19:33:18.296 -05:00 [FTL] Conversion with try-convert failed. Make sure Try-Convert (version 0.7.157502 or higher) is installed and that your project does not use custom imports.
+2021-03-12 19:33:19.822 -05:00 [WRN] Upgrade step Convert project file to SDK style failed: "Failed": Conversion with try-convert failed.
+2021-03-12 19:33:26.876 -05:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-03-12 19:33:26.878 -05:00 [INF] Converting project file format with try-convert
+2021-03-12 19:33:27.107 -05:00 [INF] [try-convert] Unrecognized command or argument '--force-web-conversion'
+2021-03-12 19:33:27.115 -05:00 [INF] [try-convert] Usage:
+2021-03-12 19:33:27.122 -05:00 [INF] [try-convert]   try-convert [options]
+2021-03-12 19:33:27.151 -05:00 [INF] [try-convert] Options:
+2021-03-12 19:33:27.158 -05:00 [INF] [try-convert]   -?, -h, --help                                 Show help and usage information
+2021-03-12 19:33:27.160 -05:00 [INF] [try-convert]   -p, --project <project>                        The path to a project to convert [default: ]
+2021-03-12 19:33:27.162 -05:00 [INF] [try-convert]   -w, --workspace <workspace>                    The solution or project file to operate on. If a project is not specified, the command will search the current directory for one. [default: ]
+2021-03-12 19:33:27.164 -05:00 [INF] [try-convert]   -m, --msbuild-path <msbuild-path>              The path to an MSBuild.exe, if you prefer to use that [default: ]
+2021-03-12 19:33:27.166 -05:00 [INF] [try-convert]   -tfm, --target-framework <target-framework>    The name of the framework you would like to upgrade to. If unspecified, the default TFM for apps chosen will be the highest available one found on your machine, and the default TFM for libraries will be .NET Standard 2.0. [default: ]
+2021-03-12 19:33:27.169 -05:00 [INF] [try-convert]   --preview                                      Use preview SDKs as part of conversion [default: False]
+2021-03-12 19:33:27.170 -05:00 [INF] [try-convert]   --diff-only                                    Produces a diff of the project to convert; no conversion is done [default: False]
+2021-03-12 19:33:27.172 -05:00 [INF] [try-convert]   --no-backup                                    Converts projects and does not create a backup of the originals. [default: False]
+2021-03-12 19:33:27.173 -05:00 [ERR] [try-convert] Exited with non-success code: 1
+2021-03-12 19:33:27.175 -05:00 [INF] [try-convert]   --keep-current-tfms                            Converts project files but does not change any TFMs. If unspecified, TFMs may change. [default: False]
+2021-03-12 19:33:27.507 -05:00 [FTL] Conversion with try-convert failed. Make sure Try-Convert (version 0.7.157502 or higher) is installed and that your project does not use custom imports.
+2021-03-12 19:33:29.017 -05:00 [WRN] Upgrade step Convert project file to SDK style failed: "Failed": Conversion with try-convert failed.
+2021-03-12 19:35:34.638 -05:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-03-12 19:35:34.640 -05:00 [INF] Converting project file format with try-convert
+2021-03-12 19:35:43.376 -05:00 [INF] [try-convert] Conversion complete!
+2021-03-12 19:35:44.675 -05:00 [INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
+2021-03-12 19:35:47.665 -05:00 [INF] Upgrade step Convert project file to SDK style applied successfully
+2021-03-12 19:36:11.734 -05:00 [INF] Initializing upgrade step Update TFM
+2021-03-12 19:36:23.949 -05:00 [INF] Applying upgrade step Update TFM
+2021-03-12 19:36:28.368 -05:00 [INF] Upgrade step Update TFM applied successfully
+2021-03-12 19:36:31.948 -05:00 [INF] Initializing upgrade step Update NuGet packages
+2021-03-12 19:36:34.334 -05:00 [INF] Marking assembly reference System.ServiceModel for removal based on package mapping configuration System.ServiceModel
+2021-03-12 19:36:34.338 -05:00 [INF] Adding package System.ServiceModel.Primitives based on package mapping configuration System.ServiceModel
+2021-03-12 19:36:34.341 -05:00 [INF] Adding package System.ServiceModel.Http based on package mapping configuration System.ServiceModel
+2021-03-12 19:36:34.342 -05:00 [INF] Adding package System.ServiceModel.Duplex based on package mapping configuration System.ServiceModel
+2021-03-12 19:36:34.344 -05:00 [INF] Adding package System.ServiceModel.NetTcp based on package mapping configuration System.ServiceModel
+2021-03-12 19:36:34.345 -05:00 [INF] Adding package System.ServiceModel.Security based on package mapping configuration System.ServiceModel
+2021-03-12 19:36:34.346 -05:00 [INF] Adding package System.ServiceModel.Federation based on package mapping configuration System.ServiceModel
+2021-03-12 19:36:35.089 -05:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.2.212405) needs added
+2021-03-12 19:36:35.448 -05:00 [INF] Adding Microsoft.Windows.Compatibility 5.0.2
+2021-03-12 19:36:35.451 -05:00 [INF] References to be removed:
+System.ServiceModel
+2021-03-12 19:36:35.453 -05:00 [INF] Packages to be addded:
+System.ServiceModel.Primitives, Version=4.8.1
+System.ServiceModel.Http, Version=4.8.1
+System.ServiceModel.Duplex, Version=4.8.1
+System.ServiceModel.NetTcp, Version=4.8.1
+System.ServiceModel.Security, Version=4.8.1
+System.ServiceModel.Federation, Version=4.8.1
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.212405
+Microsoft.Windows.Compatibility, Version=5.0.2
+2021-03-12 19:36:38.229 -05:00 [INF] Applying upgrade step Update NuGet packages
+2021-03-12 19:36:38.237 -05:00 [INF] Removing outdated assembly reference: System.ServiceModel
+2021-03-12 19:36:38.242 -05:00 [INF] Adding package reference: System.ServiceModel.Primitives, Version=4.8.1
+2021-03-12 19:36:38.245 -05:00 [INF] Adding package reference: System.ServiceModel.Http, Version=4.8.1
+2021-03-12 19:36:38.246 -05:00 [INF] Adding package reference: System.ServiceModel.Duplex, Version=4.8.1
+2021-03-12 19:36:38.247 -05:00 [INF] Adding package reference: System.ServiceModel.NetTcp, Version=4.8.1
+2021-03-12 19:36:38.248 -05:00 [INF] Adding package reference: System.ServiceModel.Security, Version=4.8.1
+2021-03-12 19:36:38.250 -05:00 [INF] Adding package reference: System.ServiceModel.Federation, Version=4.8.1
+2021-03-12 19:36:38.252 -05:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.212405
+2021-03-12 19:36:38.253 -05:00 [INF] Adding package reference: Microsoft.Windows.Compatibility, Version=5.0.2
+2021-03-12 19:36:46.703 -05:00 [INF] Marking package System.ServiceModel.Primitives for removal because it appears to be a transitive dependency
+2021-03-12 19:36:46.710 -05:00 [INF] Marking package System.ServiceModel.Http for removal because it appears to be a transitive dependency
+2021-03-12 19:36:46.741 -05:00 [INF] Marking package System.ServiceModel.Security for removal because it appears to be a transitive dependency
+2021-03-12 19:36:46.986 -05:00 [INF] Removing outdated package reference: System.ServiceModel.Primitives, Version=4.8.1
+2021-03-12 19:36:46.989 -05:00 [INF] Removing outdated package reference: System.ServiceModel.Http, Version=4.8.1
+2021-03-12 19:36:46.990 -05:00 [INF] Removing outdated package reference: System.ServiceModel.Security, Version=4.8.1
+2021-03-12 19:36:52.974 -05:00 [INF] Upgrade step Update NuGet packages applied successfully
+2021-03-12 19:36:58.814 -05:00 [INF] Initializing upgrade step Add template files
+2021-03-12 19:36:58.829 -05:00 [INF] 0 expected template items needed
+2021-03-12 19:36:58.832 -05:00 [INF] Initializing upgrade step Upgrade app config files
+2021-03-12 19:36:58.848 -05:00 [INF] Found 0 app settings for upgrade: 
+2021-03-12 19:36:58.857 -05:00 [INF] 0 web page namespace imports need upgraded: 
+2021-03-12 19:36:58.859 -05:00 [INF] Initializing upgrade step Update C# source
+2021-03-12 19:37:05.149 -05:00 [INF] Initializing upgrade step Move to next project
+2021-03-12 19:37:09.108 -05:00 [INF] Applying upgrade step Move to next project
+2021-03-12 19:37:09.109 -05:00 [INF] Upgrade step Move to next project applied successfully
+2021-03-12 19:37:10.532 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:37:12.668 -05:00 [INF] Applying upgrade step Select project to upgrade
+2021-03-12 19:37:14.963 -05:00 [INF] Upgrade step Select project to upgrade applied successfully
+2021-03-12 19:37:16.014 -05:00 [INF] Initializing upgrade step Back up project
+2021-03-12 19:37:20.676 -05:00 [INF] Skipping upgrade step Back up project
+2021-03-12 19:37:20.679 -05:00 [INF] Upgrade step Back up project skipped
+2021-03-12 19:37:21.710 -05:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-03-12 19:37:22.972 -05:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-03-12 19:37:22.975 -05:00 [INF] Converting project file format with try-convert
+2021-03-12 19:37:26.361 -05:00 [INF] [try-convert] Conversion complete!
+2021-03-12 19:37:27.205 -05:00 [INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
+2021-03-12 19:37:29.722 -05:00 [INF] Upgrade step Convert project file to SDK style applied successfully
+2021-03-12 19:37:34.405 -05:00 [INF] Initializing upgrade step Update TFM
+2021-03-12 19:37:35.627 -05:00 [INF] Applying upgrade step Update TFM
+2021-03-12 19:37:39.354 -05:00 [INF] Upgrade step Update TFM applied successfully
+2021-03-12 19:37:41.013 -05:00 [INF] Initializing upgrade step Update NuGet packages
+2021-03-12 19:37:43.634 -05:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.2.212405) needs added
+2021-03-12 19:37:43.636 -05:00 [INF] Packages to be addded:
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.212405
+2021-03-12 19:37:51.284 -05:00 [INF] Applying upgrade step Update NuGet packages
+2021-03-12 19:37:51.286 -05:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.212405
+2021-03-12 19:37:55.378 -05:00 [INF] Upgrade step Update NuGet packages applied successfully
+2021-03-12 19:37:58.269 -05:00 [INF] Initializing upgrade step Add template files
+2021-03-12 19:37:58.271 -05:00 [INF] 0 expected template items needed
+2021-03-12 19:37:58.272 -05:00 [INF] Initializing upgrade step Upgrade app config files
+2021-03-12 19:37:58.275 -05:00 [INF] Found 0 app settings for upgrade: 
+2021-03-12 19:37:58.277 -05:00 [INF] 0 web page namespace imports need upgraded: 
+2021-03-12 19:37:58.278 -05:00 [INF] Initializing upgrade step Update C# source
+2021-03-12 19:37:58.824 -05:00 [INF] Initializing upgrade step Move to next project
+2021-03-12 19:38:01.012 -05:00 [INF] Applying upgrade step Move to next project
+2021-03-12 19:38:01.013 -05:00 [INF] Upgrade step Move to next project applied successfully
+2021-03-12 19:38:02.552 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:38:03.892 -05:00 [INF] Applying upgrade step Select project to upgrade
+2021-03-12 19:38:06.220 -05:00 [INF] Upgrade step Select project to upgrade applied successfully
+2021-03-12 19:38:07.214 -05:00 [INF] Initializing upgrade step Back up project
+2021-03-12 19:38:10.532 -05:00 [INF] Skipping upgrade step Back up project
+2021-03-12 19:38:10.535 -05:00 [INF] Upgrade step Back up project skipped
+2021-03-12 19:38:11.806 -05:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-03-12 19:38:13.205 -05:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-03-12 19:38:13.207 -05:00 [INF] Converting project file format with try-convert
+2021-03-12 19:38:16.554 -05:00 [INF] [try-convert] Conversion complete!
+2021-03-12 19:38:17.413 -05:00 [INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
+2021-03-12 19:38:20.736 -05:00 [INF] Upgrade step Convert project file to SDK style applied successfully
+2021-03-12 19:38:27.614 -05:00 [INF] Initializing upgrade step Update TFM
+2021-03-12 19:38:31.093 -05:00 [INF] Applying upgrade step Update TFM
+2021-03-12 19:38:35.443 -05:00 [INF] Upgrade step Update TFM applied successfully
+2021-03-12 19:38:40.485 -05:00 [INF] Initializing upgrade step Update NuGet packages
+2021-03-12 19:38:43.227 -05:00 [INF] Marking package System.Data.DataSetExtensions for removal because it appears to be a transitive dependency
+2021-03-12 19:38:43.240 -05:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.2.212405) needs added
+2021-03-12 19:38:43.350 -05:00 [INF] Adding Microsoft.Windows.Compatibility 5.0.2
+2021-03-12 19:38:43.352 -05:00 [INF] Packages to be removed:
+System.Data.DataSetExtensions, Version=4.5.0
+2021-03-12 19:38:43.353 -05:00 [INF] Packages to be addded:
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.212405
+Microsoft.Windows.Compatibility, Version=5.0.2
+2021-03-12 19:38:46.515 -05:00 [INF] Applying upgrade step Update NuGet packages
+2021-03-12 19:38:46.517 -05:00 [INF] Removing outdated package reference: System.Data.DataSetExtensions, Version=4.5.0
+2021-03-12 19:38:46.520 -05:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.212405
+2021-03-12 19:38:46.523 -05:00 [INF] Adding package reference: Microsoft.Windows.Compatibility, Version=5.0.2
+2021-03-12 19:38:51.257 -05:00 [INF] Upgrade step Update NuGet packages applied successfully
+2021-03-12 19:38:52.692 -05:00 [INF] Initializing upgrade step Add template files
+2021-03-12 19:38:52.695 -05:00 [INF] 0 expected template items needed
+2021-03-12 19:38:52.696 -05:00 [INF] Initializing upgrade step Update C# source
+2021-03-12 19:38:53.117 -05:00 [INF] Initializing upgrade step Move to next project
+2021-03-12 19:38:55.276 -05:00 [INF] Applying upgrade step Move to next project
+2021-03-12 19:38:55.278 -05:00 [INF] Upgrade step Move to next project applied successfully
+2021-03-12 19:38:57.343 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:39:15.485 -05:00 [INF] Skipping upgrade step Select project to upgrade
+2021-03-12 19:39:15.487 -05:00 [INF] Upgrade step Select project to upgrade skipped
+2021-03-12 19:39:17.197 -05:00 [INF] Initializing upgrade step Finalize Solution
+2021-03-12 19:39:19.054 -05:00 [INF] Applying upgrade step Finalize Solution
+2021-03-12 19:39:19.055 -05:00 [INF] Upgrade step Finalize Solution applied successfully
+2021-03-12 19:39:20.684 -05:00 [INF] Upgrade has completed. Please review any changes.
+2021-03-12 19:39:20.687 -05:00 [INF] Saving upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:42:13.826 -05:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-03-12 19:42:13.873 -05:00 [INF] Registered 1 extensions:
+	Default extension
+2021-03-12 19:42:17.160 -05:00 [INF] Loading upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:42:17.464 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:42:20.918 -05:00 [INF] Applying upgrade step Select project to upgrade
+2021-03-12 19:42:20.922 -05:00 [ERR] Unexpected error applying step
+System.InvalidOperationException: Entrypoint must be set before using this step
+   at Microsoft.DotNet.UpgradeAssistant.Steps.Solution.CurrentProjectSelectionStep.GetProject(IUpgradeContext context, Func`3 isProjectCompleted, CancellationToken token) in /_/src/steps/Microsoft.DotNet.UpgradeAssistant.Steps.Solution/CurrentProjectSelectionStep.cs:line 112
+   at Microsoft.DotNet.UpgradeAssistant.Steps.Solution.CurrentProjectSelectionStep.ApplyImplAsync(IUpgradeContext context, CancellationToken token) in /_/src/steps/Microsoft.DotNet.UpgradeAssistant.Steps.Solution/CurrentProjectSelectionStep.cs:line 89
+   at Microsoft.DotNet.UpgradeAssistant.UpgradeStep.ApplyAsync(IUpgradeContext context, CancellationToken token) in /_/src/common/Microsoft.DotNet.UpgradeAssistant.Abstractions/UpgradeStep.cs:line 169
+2021-03-12 19:45:52.275 -05:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-03-12 19:45:52.319 -05:00 [INF] Registered 1 extensions:
+	Default extension
+2021-03-12 19:45:55.813 -05:00 [INF] Loading upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant
+2021-03-12 19:45:56.168 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:46:29.469 -05:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.201\
+2021-03-12 19:46:29.515 -05:00 [INF] Registered 1 extensions:
+	Default extension
+2021-03-12 19:46:32.838 -05:00 [INF] Initializing upgrade step Select an entrypoint
+2021-03-12 19:46:36.815 -05:00 [INF] Applying upgrade step Select an entrypoint
+2021-03-12 19:46:44.555 -05:00 [INF] Upgrade step Select an entrypoint applied successfully
+2021-03-12 19:46:46.299 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:46:49.020 -05:00 [INF] Applying upgrade step Select project to upgrade
+2021-03-12 19:46:50.948 -05:00 [INF] Upgrade step Select project to upgrade applied successfully
+2021-03-12 19:46:52.432 -05:00 [INF] Initializing upgrade step Back up project
+2021-03-12 19:46:55.447 -05:00 [INF] Applying upgrade step Back up project
+2021-03-12 19:46:56.806 -05:00 [INF] Backing up C:\Users\zc456\source\repos\simtactics-staging\SimsNet to C:\Users\zc456\source\repos\simtactics-staging\SimsNet.backup
+2021-03-12 19:46:56.943 -05:00 [INF] Project backed up to C:\Users\zc456\source\repos\simtactics-staging\SimsNet.backup
+2021-03-12 19:46:56.944 -05:00 [INF] Upgrade step Back up project applied successfully
+2021-03-12 19:46:58.932 -05:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-03-12 19:47:00.316 -05:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-03-12 19:47:00.320 -05:00 [INF] Converting project file format with try-convert
+2021-03-12 19:47:02.505 -05:00 [INF] [try-convert] This project has an unrecognized custom import which may need reviewed after conversion: MonoGame.Framework.DesktopGL.targets
+2021-03-12 19:47:03.124 -05:00 [INF] [try-convert] Conversion complete!
+2021-03-12 19:47:04.127 -05:00 [INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
+2021-03-12 19:47:07.077 -05:00 [INF] Upgrade step Convert project file to SDK style applied successfully
+2021-03-12 19:47:07.079 -05:00 [INF] Initializing upgrade step Update TFM
+2021-03-12 19:47:08.076 -05:00 [INF] Applying upgrade step Update TFM
+2021-03-12 19:47:12.874 -05:00 [INF] Upgrade step Update TFM applied successfully
+2021-03-12 19:47:17.285 -05:00 [INF] Initializing upgrade step Update NuGet packages
+2021-03-12 19:47:20.041 -05:00 [INF] Marking package Microsoft.CSharp for removal because it appears to be a transitive dependency
+2021-03-12 19:47:20.047 -05:00 [INF] Marking package MonoGame.Framework.DesktopGL for removal because it appears to be a transitive dependency
+2021-03-12 19:47:20.057 -05:00 [INF] Marking package System.Data.DataSetExtensions for removal because it appears to be a transitive dependency
+2021-03-12 19:47:20.336 -05:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.2.212405) needs added
+2021-03-12 19:47:20.362 -05:00 [INF] Packages to be removed:
+Microsoft.CSharp, Version=4.7.0
+MonoGame.Framework.DesktopGL, Version=3.8.0.1641
+System.Data.DataSetExtensions, Version=4.5.0
+2021-03-12 19:47:20.364 -05:00 [INF] Packages to be addded:
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.212405
+2021-03-12 19:47:21.780 -05:00 [INF] Applying upgrade step Update NuGet packages
+2021-03-12 19:47:21.788 -05:00 [INF] Removing outdated package reference: Microsoft.CSharp, Version=4.7.0
+2021-03-12 19:47:21.791 -05:00 [INF] Removing outdated package reference: MonoGame.Framework.DesktopGL, Version=3.8.0.1641
+2021-03-12 19:47:21.792 -05:00 [INF] Removing outdated package reference: System.Data.DataSetExtensions, Version=4.5.0
+2021-03-12 19:47:21.796 -05:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.212405
+2021-03-12 19:47:26.212 -05:00 [INF] Upgrade step Update NuGet packages applied successfully
+2021-03-12 19:47:29.973 -05:00 [INF] Initializing upgrade step Add template files
+2021-03-12 19:47:29.991 -05:00 [INF] 0 expected template items needed
+2021-03-12 19:47:29.993 -05:00 [INF] Initializing upgrade step Upgrade app config files
+2021-03-12 19:47:30.011 -05:00 [INF] Found 0 app settings for upgrade: 
+2021-03-12 19:47:30.020 -05:00 [INF] 0 web page namespace imports need upgraded: 
+2021-03-12 19:47:30.022 -05:00 [INF] Initializing upgrade step Update C# source
+2021-03-12 19:47:33.542 -05:00 [INF] Initializing upgrade step Move to next project
+2021-03-12 19:47:36.087 -05:00 [INF] Applying upgrade step Move to next project
+2021-03-12 19:47:36.089 -05:00 [INF] Upgrade step Move to next project applied successfully
+2021-03-12 19:47:38.202 -05:00 [INF] Initializing upgrade step Select project to upgrade
+2021-03-12 19:47:45.877 -05:00 [INF] Skipping upgrade step Select project to upgrade
+2021-03-12 19:47:45.878 -05:00 [INF] Upgrade step Select project to upgrade skipped
+2021-03-12 19:47:46.840 -05:00 [INF] Initializing upgrade step Finalize Solution
+2021-03-12 19:47:49.935 -05:00 [INF] Applying upgrade step Finalize Solution
+2021-03-12 19:47:49.936 -05:00 [INF] Upgrade step Finalize Solution applied successfully
+2021-03-12 19:47:51.335 -05:00 [INF] Upgrade has completed. Please review any changes.
+2021-03-12 19:47:51.339 -05:00 [INF] Saving upgrade progress file at C:\Users\zc456\source\repos\simtactics-staging\.upgrade-assistant

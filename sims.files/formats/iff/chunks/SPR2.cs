@@ -1,18 +1,13 @@
-﻿/*
+/*
  * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/. 
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework.Graphics;
-using FSO.Files.Utils;
 using System.IO;
+using FSO.Files.Utils;
 using Microsoft.Xna.Framework;
-using System.Runtime.InteropServices;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace FSO.Files.Formats.IFF.Chunks
 {
@@ -80,7 +75,8 @@ namespace FSO.Files.Formats.IFF.Chunks
             {
                 io.WriteUInt32(1001);
                 io.WriteUInt32(DefaultPaletteID);
-                if (Frames == null) io.WriteUInt32(0);
+                if (Frames == null)
+                    io.WriteUInt32(0);
                 else
                 {
                     io.WriteUInt32((uint)Frames.Length);
@@ -95,11 +91,13 @@ namespace FSO.Files.Formats.IFF.Chunks
 
         public override void Dispose()
         {
-            if (Frames == null) return;
+            if (Frames == null)
+                return;
             foreach (var frame in Frames)
             {
                 var palette = ChunkParent.Get<PALT>(frame.PaletteID);
-                if (palette != null) palette.References--;
+                if (palette != null)
+                    palette.References--;
             }
         }
     }
@@ -123,7 +121,7 @@ namespace FSO.Files.Formats.IFF.Chunks
         public ushort PaletteID { get; set; }
         public ushort TransparentColorIndex { get; internal set; }
         public Vector2 Position { get; internal set; }
-        
+
         private SPR2 Parent;
         private uint Version;
         private byte[] ToDecode;
@@ -145,12 +143,17 @@ namespace FSO.Files.Formats.IFF.Chunks
             {
                 var spriteVersion = io.ReadUInt32();
                 var spriteSize = io.ReadUInt32();
-                if (IffFile.RETAIN_CHUNK_DATA) ReadDeferred(1001, io);
-                else ToDecode = io.ReadBytes(spriteSize);
-            } else
+                if (IffFile.RETAIN_CHUNK_DATA)
+                    ReadDeferred(1001, io);
+                else
+                    ToDecode = io.ReadBytes(spriteSize);
+            }
+            else
             {
-                if (IffFile.RETAIN_CHUNK_DATA) ReadDeferred(1000, io);
-                else ToDecode = io.ReadBytes(guessedSize);
+                if (IffFile.RETAIN_CHUNK_DATA)
+                    ReadDeferred(1000, io);
+                else
+                    ToDecode = io.ReadBytes(guessedSize);
             }
         }
 
@@ -223,19 +226,23 @@ namespace FSO.Files.Formats.IFF.Chunks
             var hasAlpha = (this.Flags & 0x04) == 0x04;
 
             var numPixels = this.Width * this.Height;
-            if (hasPixels){
+            if (hasPixels)
+            {
                 this.PixelData = new Color[numPixels];
                 this.PalData = new byte[numPixels];
             }
-            if (hasZBuffer){
+            if (hasZBuffer)
+            {
                 this.ZBufferData = new byte[numPixels];
             }
-            if (hasAlpha){
+            if (hasAlpha)
+            {
                 this.AlphaData = new byte[numPixels];
             }
 
             var palette = Parent.ChunkParent.Get<PALT>(this.PaletteID);
-            if (palette == null) palette = new PALT() { Colors = new Color[256] };
+            if (palette == null)
+                palette = new PALT() { Colors = new Color[256] };
             palette.References++;
             var transparentPixel = palette.Colors[TransparentColorIndex];
             transparentPixel.A = 0;
@@ -291,7 +298,8 @@ namespace FSO.Files.Formats.IFF.Chunks
                                     if (pxWithAlpha)
                                     {
                                         /** Padding? **/
-                                        if ((pxCount * 3) % 2 != 0){
+                                        if ((pxCount * 3) % 2 != 0)
+                                        {
                                             bytes--;
                                             io.ReadByte();
                                         }
@@ -304,7 +312,8 @@ namespace FSO.Files.Formats.IFF.Chunks
                                         this.PixelData[offset] = transparentPixel;
                                         this.PalData[offset] = (byte)TransparentColorIndex;
                                         this.PixelData[offset].A = 0;
-                                        if (hasZBuffer){
+                                        if (hasZBuffer)
+                                        {
                                             this.ZBufferData[offset] = 255;
                                         }
                                         x++;
@@ -360,8 +369,8 @@ namespace FSO.Files.Formats.IFF.Chunks
                         {
                             for (var col = 0; col < Width; col++)
                             {
-                                var offset = ((y+row) * Width) + col;
-                                if (hasPixels) 
+                                var offset = ((y + row) * Width) + col;
+                                if (hasPixels)
                                 {
                                     this.PixelData[offset] = transparentPixel;
                                     this.PalData[offset] = (byte)TransparentColorIndex;
@@ -423,7 +432,8 @@ namespace FSO.Files.Formats.IFF.Chunks
                 }
                 PixelCache = new Texture2D(device, this.Width, this.Height);
                 PixelCache.SetData<Color>(this.PixelData);
-                if (!IffFile.RETAIN_CHUNK_DATA) PixelData = null;
+                if (!IffFile.RETAIN_CHUNK_DATA)
+                    PixelData = null;
             }
             return PixelCache;
         }
@@ -444,7 +454,8 @@ namespace FSO.Files.Formats.IFF.Chunks
                 }
                 ZCache = new Texture2D(device, this.Width, this.Height, false, SurfaceFormat.Alpha8);
                 ZCache.SetData<byte>(this.ZBufferData);
-                if (!IffFile.RETAIN_CHUNK_DATA) ZBufferData = null;
+                if (!IffFile.RETAIN_CHUNK_DATA)
+                    ZBufferData = null;
             }
             return ZCache;
         }
@@ -476,12 +487,12 @@ namespace FSO.Files.Formats.IFF.Chunks
             Flags = 7;
             TransparentColorIndex = 255;
 
-			var colors = SPR2FrameEncoder.QuantizeFrame(this, out PalData);
+            var colors = SPR2FrameEncoder.QuantizeFrame(this, out PalData);
 
             var palt = new Color[256];
             int i = 0;
             foreach (var c in colors)
-                palt[i++] = new Color(c.R, c.G, c.B, 255);
+                palt[i++] = new Color(c.R, c.G, c.B, (byte)255);
 
             return palt;
         }
@@ -491,7 +502,8 @@ namespace FSO.Files.Formats.IFF.Chunks
             if (this.PaletteID != 0)
             {
                 var old = Parent.ChunkParent.Get<PALT>(this.PaletteID);
-                if (old != null) old.References--;
+                if (old != null)
+                    old.References--;
             }
             PaletteID = p.ChunkID;
             p.References++;

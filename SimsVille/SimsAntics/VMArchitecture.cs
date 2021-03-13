@@ -1,21 +1,19 @@
-﻿/*
+/*
  * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/. 
  */
 
-using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using FSO.LotView.Model;
-using FSO.SimAntics.Model;
-using FSO.SimAntics.Utils;
-using FSO.SimAntics.Marshals;
-using FSO.SimAntics.NetPlay.Model;
 using FSO.Content;
-using FSO.Files.Formats.IFF.Chunks;
+using FSO.LotView.Model;
+using FSO.SimAntics.Marshals;
+using FSO.SimAntics.Model;
+using FSO.SimAntics.NetPlay.Model;
+using FSO.SimAntics.Utils;
+using Microsoft.Xna.Framework;
 
 namespace FSO.SimAntics
 {
@@ -78,7 +76,7 @@ namespace FSO.SimAntics
             new Color(255, 255, 255),
             new Color(217, 109, 0),
             new Color(60, 80, 80)*1.5f,
-            new Color(60, 80, 132)*1.5f,     
+            new Color(60, 80, 132)*1.5f,
         };
 
         public void SetRoof(float pitch, uint style)
@@ -107,8 +105,9 @@ namespace FSO.SimAntics
             this.VisFloors = new FloorTile[Stories][];
 
             this.ObjectSupport = new bool[Stories][]; //true if there's an object support in the specified position
-            this.Supported = new bool[Stories-1][]; //no supported array for bottom floor. true if this tile is supported.
-            if (blueprint != null) blueprint.Supported = Supported;
+            this.Supported = new bool[Stories - 1][]; //no supported array for bottom floor. true if this tile is supported.
+            if (blueprint != null)
+                blueprint.Supported = Supported;
 
             this.Rooms = new VMRoomMap[Stories];
 
@@ -122,12 +121,13 @@ namespace FSO.SimAntics
                 this.VisFloors[i] = new FloorTile[numTiles];
                 this.ObjectSupport[i] = new bool[numTiles];
 
-                if (i<Stories-1) this.Supported[i] = new bool[numTiles];
+                if (i < Stories - 1)
+                    this.Supported[i] = new bool[numTiles];
 
                 this.Rooms[i] = new VMRoomMap();
             }
 
-            
+
             this.RoomData = new List<VMRoom>();
             this.WorldUI = blueprint;
 
@@ -152,7 +152,7 @@ namespace FSO.SimAntics
         public void SetObjectSupported(short x, short y, sbyte level, bool support)
         {
             ObjectSupport[level - 1][y * Width + x] = support;
-            RegenerateSupported(level+1);
+            RegenerateSupported(level + 1);
         }
 
         private Point[] SupportSpread =
@@ -165,19 +165,21 @@ namespace FSO.SimAntics
 
         public void RegenerateSupported(int level)
         {
-            if (level < 2 || level > Stories) return;
+            if (level < 2 || level > Stories)
+                return;
             bool[] objSup = ObjectSupport[level - 2];
             bool[] sup = Supported[level - 2];
             FloorTile[] floors = Floors[level - 1];
             VMRoomMap rooms = Rooms[level - 2];
-                
+
             int offset = 0;
-            for (int y=0; y<Height; y++)
+            for (int y = 0; y < Height; y++)
             {
-                for (int x=0; x<Width; x++)
+                for (int x = 0; x < Width; x++)
                 {
                     //if we are an object support or are above a room that is not outside, we're supported.
-                    if (objSup[offset] || !RoomData[(ushort)(rooms.Map[offset])].IsOutside) sup[offset] = true;
+                    if (objSup[offset] || !RoomData[(ushort)(rooms.Map[offset])].IsOutside)
+                        sup[offset] = true;
                     else
                     {
                         //if we are a floor tile or are next to the floor tile, do the full 5x5 check.
@@ -186,7 +188,8 @@ namespace FSO.SimAntics
                         {
                             int newX = x + SupportSpread[i].X;
                             int newY = y + SupportSpread[i].Y;
-                            if (newX < 0 || newX >= Width || newY < 0 || newY >= Height) continue;
+                            if (newX < 0 || newX >= Width || newY < 0 || newY >= Height)
+                                continue;
                             int newOff = newY * Width + newX;
                             if (floors[newOff].Pattern != 0)
                             {
@@ -204,19 +207,22 @@ namespace FSO.SimAntics
                                 {
                                     int newX = x + x2;
                                     int newY = y + y2;
-                                    if (newX < 0 || newX >= Width || newY < 0 || newY >= Height) continue;
+                                    if (newX < 0 || newX >= Width || newY < 0 || newY >= Height)
+                                        continue;
                                     int newOff = newY * Width + newX;
-                                    if (!RoomData[(ushort)rooms.Map[newOff]].IsOutside || (objSup[newOff] && (Math.Abs(x2)<2 && Math.Abs(y2)<2)))
+                                    if (!RoomData[(ushort)rooms.Map[newOff]].IsOutside || (objSup[newOff] && (Math.Abs(x2) < 2 && Math.Abs(y2) < 2)))
                                     {
                                         step2 = true;
                                         break;
                                     }
                                 }
-                                if (step2) break;
+                                if (step2)
+                                    break;
                             }
                             sup[offset] = step2;
                         }
-                        else sup[offset] = false;
+                        else
+                            sup[offset] = false;
                     }
                     offset++;
                 }
@@ -232,20 +238,21 @@ namespace FSO.SimAntics
         {
             RoomData = new List<VMRoom>();
             RoomData.Add(new VMRoom()); //dummy at index 0
-            for (int i=0; i<Stories; i++)
+            for (int i = 0; i < Stories; i++)
             {
                 Rooms[i].GenerateMap(Walls[i], Floors[i], Width, Height, RoomData);
-                if (VM.UseWorld) WorldUI.RoomMap[i] = Rooms[i].Map;
+                if (VM.UseWorld)
+                    WorldUI.RoomMap[i] = Rooms[i].Map;
                 RegenerateSupported(i + 1);
             }
         }
 
         public void Tick()
-        { 
+        {
             if (WallsDirty || FloorsDirty)
             {
                 RegenRoomMap();
-                if (WallsChanged != null) WallsChanged(this);
+                WallsChanged?.Invoke(this);
                 WorldUI.RoofComp.SetStylePitch(RoofStyle, RoofPitch);
             }
 
@@ -263,14 +270,14 @@ namespace FSO.SimAntics
 
 
             var clock = Context.Clock;
-            SetTimeOfDay(clock.Hours/24.0 + clock.Minutes/(24.0*60) + clock.Seconds/(24.0*60*60));
+            SetTimeOfDay(clock.Hours / 24.0 + clock.Minutes / (24.0 * 60) + clock.Seconds / (24.0 * 60 * 60));
 
             FloorsDirty = false;
             Redraw = false;
             WallsDirty = false;
         }
 
-        
+
 
         public int SimulateCommands(List<VMArchitectureCommand> commands, bool visualChange)
         {
@@ -327,12 +334,13 @@ namespace FSO.SimAntics
             int pdCount = 0;
             ushort pdVal = 0;
             VMAvatar lastAvatar = null;
-            for (var i=0; i<commands.Count; i++)
+            for (var i = 0; i < commands.Count; i++)
             {
                 var com = commands[i];
                 var avaEnt = Context.VM.Entities.FirstOrDefault(x => x.PersistID == com.CallerUID);
-                if ((avaEnt == null || avaEnt is VMGameObject) && !transient) return 0; //we need an avatar to run a command from net
-                var avatar = (transient)? null : (VMAvatar)avaEnt;
+                if ((avaEnt == null || avaEnt is VMGameObject) && !transient)
+                    return 0; //we need an avatar to run a command from net
+                var avatar = (transient) ? null : (VMAvatar)avaEnt;
                 lastAvatar = avatar;
                 var styleInd = -1;
                 var walls = Content.Content.Get().WorldWalls;
@@ -341,18 +349,19 @@ namespace FSO.SimAntics
                 switch (com.Type)
                 {
                     case VMArchitectureCommandType.WALL_LINE:
-                        if (styleInd == -1) break; //MUST be purchasable style
+                        if (styleInd == -1)
+                            break; //MUST be purchasable style
                         var lstyle = walls.GetWallStyle(com.style);
                         var nwCount = VMArchitectureTools.DrawWall(this, new Point(com.x, com.y), com.x2, com.y2, com.pattern, com.style, com.level, false);
                         if (nwCount > 0)
                         {
                             cost += nwCount * lstyle.Price;
                             if (avatar != null)
-                            Context.VM.SignalChatEvent(new VMChatEvent(avatar.PersistID, VMChatEventType.Arch,
-                            avatar.Name,
-                            Context.VM.GetUserIP(avatar.PersistID),
-                            "placed " + nwCount + " walls."
-                            ));
+                                Context.VM.SignalChatEvent(new VMChatEvent(avatar.PersistID, VMChatEventType.Arch,
+                                avatar.Name,
+                                Context.VM.GetUserIP(avatar.PersistID),
+                                "placed " + nwCount + " walls."
+                                ));
                         }
                         break;
                     case VMArchitectureCommandType.WALL_DELETE:
@@ -361,31 +370,33 @@ namespace FSO.SimAntics
                         {
                             cost -= 7 * dwCount;
                             if (avatar != null)
-                            Context.VM.SignalChatEvent(new VMChatEvent(avatar.PersistID, VMChatEventType.Arch,
-                            avatar.Name,
-                            Context.VM.GetUserIP(avatar.PersistID),
-                            "erased " + dwCount + " walls."
-                            ));
+                                Context.VM.SignalChatEvent(new VMChatEvent(avatar.PersistID, VMChatEventType.Arch,
+                                avatar.Name,
+                                Context.VM.GetUserIP(avatar.PersistID),
+                                "erased " + dwCount + " walls."
+                                ));
                         }
                         break;
                     case VMArchitectureCommandType.WALL_RECT:
-                        if (styleInd == -1) break; //MUST be purchasable style
+                        if (styleInd == -1)
+                            break; //MUST be purchasable style
                         var rstyle = walls.GetWallStyle(com.style);
                         var rwCount = VMArchitectureTools.DrawWallRect(this, new Rectangle(com.x, com.y, com.x2, com.y2), com.pattern, com.style, com.level);
                         if (rwCount > 0)
                         {
                             cost += rwCount * rstyle.Price;
                             if (avatar != null)
-                            Context.VM.SignalChatEvent(new VMChatEvent(avatar.PersistID, VMChatEventType.Arch,
-                            avatar.Name,
-                            Context.VM.GetUserIP(avatar.PersistID),
-                            "placed " + rwCount + " walls (rect)."
-                        ));
+                                Context.VM.SignalChatEvent(new VMChatEvent(avatar.PersistID, VMChatEventType.Arch,
+                                avatar.Name,
+                                Context.VM.GetUserIP(avatar.PersistID),
+                                "placed " + rwCount + " walls (rect)."
+                            ));
                         }
                         break;
                     case VMArchitectureCommandType.PATTERN_FILL:
                         var pattern = GetPatternRef(com.pattern);
-                        if (pattern == null && com.pattern != 0) break;
+                        if (pattern == null && com.pattern != 0)
+                            break;
                         var pfCount = VMArchitectureTools.WallPatternFill(this, new Point(com.x, com.y), com.pattern, com.level);
                         if (pfCount.Total > 0)
                         {
@@ -401,7 +412,8 @@ namespace FSO.SimAntics
                         break;
                     case VMArchitectureCommandType.PATTERN_DOT:
                         var pdpattern = GetPatternRef(com.pattern);
-                        if (pdpattern == null && com.pattern != 0) break;
+                        if (pdpattern == null && com.pattern != 0)
+                            break;
                         var dot = VMArchitectureTools.WallPatternDot(this, new Point(com.x, com.y), com.pattern, com.x2, com.y2, com.level);
                         pdVal = com.pattern;
                         if (dot.Total > -1)
@@ -414,24 +426,26 @@ namespace FSO.SimAntics
                         break;
                     case VMArchitectureCommandType.FLOOR_FILL:
                         var ffpattern = GetFloorRef(com.pattern);
-                        if (ffpattern == null && com.pattern != 0) break;
+                        if (ffpattern == null && com.pattern != 0)
+                            break;
                         var ffCount = VMArchitectureTools.FloorPatternFill(this, new Point(com.x, com.y), com.pattern, com.level);
                         if (ffCount.Total > 0)
                         {
-                            cost -= (ffCount.Cost - ffCount.Cost / 5)/2;
+                            cost -= (ffCount.Cost - ffCount.Cost / 5) / 2;
                             cost += (ffpattern == null) ? 0 : ffpattern.Price * ffCount.Total / 2;
 
                             if (avatar != null)
-                            Context.VM.SignalChatEvent(new VMChatEvent(avatar.PersistID, VMChatEventType.Arch,
-                            avatar.Name,
-                            Context.VM.GetUserIP(avatar.PersistID),
-                            "floor filled " + ffCount.Total / 2f + " with pattern #" + com.pattern
-                            ));
+                                Context.VM.SignalChatEvent(new VMChatEvent(avatar.PersistID, VMChatEventType.Arch,
+                                avatar.Name,
+                                Context.VM.GetUserIP(avatar.PersistID),
+                                "floor filled " + ffCount.Total / 2f + " with pattern #" + com.pattern
+                                ));
                         }
                         break;
                     case VMArchitectureCommandType.FLOOR_RECT:
                         var frpattern = GetFloorRef(com.pattern);
-                        if (frpattern == null && com.pattern != 0) break;
+                        if (frpattern == null && com.pattern != 0)
+                            break;
                         var frCount = VMArchitectureTools.FloorPatternRect(this, new Rectangle(com.x, com.y, com.x2, com.y2), com.style, com.pattern, com.level);
                         if (frCount.Total > 0)
                         {
@@ -466,7 +480,7 @@ namespace FSO.SimAntics
             if (VM.UseWorld)
             {
                 WorldUI.BuildableArea = BuildableArea;
-               // WorldUI.Terrain.TerrainDirty = true;
+                // WorldUI.Terrain.TerrainDirty = true;
             }
         }
 
@@ -544,20 +558,25 @@ namespace FSO.SimAntics
                         if (error + errorprev < ddx)
                         {
                             //moved into x before y
-                            if (GetWall((short)(oldx+xAOff), (short)(oldy), level).TopLeftSolid) return true;
-                            if (GetWall((short)(x), (short)(oldy + yAOff), level).TopRightSolid) return true;
+                            if (GetWall((short)(oldx + xAOff), (short)(oldy), level).TopLeftSolid)
+                                return true;
+                            if (GetWall((short)(x), (short)(oldy + yAOff), level).TopRightSolid)
+                                return true;
                         }
                         else
                         {
                             //moved into y before x
-                            if (GetWall((short)(oldx), (short)(oldy + yAOff), level).TopRightSolid) return true;
-                            if (GetWall((short)(oldx + xAOff), (short)(y), level).TopLeftSolid) return true;
+                            if (GetWall((short)(oldx), (short)(oldy + yAOff), level).TopRightSolid)
+                                return true;
+                            if (GetWall((short)(oldx + xAOff), (short)(y), level).TopLeftSolid)
+                                return true;
                         }
                     }
                     else
                     {
                         //only move into x
-                        if (GetWall((short)(oldx+xAOff), (short)(oldy), level).TopLeftSolid) return true;
+                        if (GetWall((short)(oldx + xAOff), (short)(oldy), level).TopLeftSolid)
+                            return true;
                     }
                     errorprev = error;
                 }
@@ -580,22 +599,27 @@ namespace FSO.SimAntics
                         if (error + errorprev < ddy)
                         {
                             //moved into y before x
-                            if (GetWall((short)(oldx), (short)(oldy + yAOff), level).TopRightSolid) return true;
-                            if (GetWall((short)(oldx+xAOff), (short)(y), level).TopLeftSolid) return true;
+                            if (GetWall((short)(oldx), (short)(oldy + yAOff), level).TopRightSolid)
+                                return true;
+                            if (GetWall((short)(oldx + xAOff), (short)(y), level).TopLeftSolid)
+                                return true;
                         }
                         else
                         {
                             //moved into x before y
-                            if (GetWall((short)(oldx+xAOff), (short)(oldy), level).TopLeftSolid) return true;
-                            if (GetWall((short)(x), (short)(oldy + yAOff), level).TopRightSolid) return true;
+                            if (GetWall((short)(oldx + xAOff), (short)(oldy), level).TopLeftSolid)
+                                return true;
+                            if (GetWall((short)(x), (short)(oldy + yAOff), level).TopRightSolid)
+                                return true;
                         }
                     }
                     else
                     {
                         //only move into y
-                        if (GetWall((short)(oldx), (short)(oldy+yAOff), level).TopRightSolid) return true;
+                        if (GetWall((short)(oldx), (short)(oldy + yAOff), level).TopRightSolid)
+                            return true;
                     }
-                    
+
                     errorprev = error;
                 }
             }
@@ -606,8 +630,9 @@ namespace FSO.SimAntics
         {
             var off = GetOffset(tileX, tileY);
 
-            WallsAt[level-1].Remove(off);
-            if (wall.Segments > 0) {
+            WallsAt[level - 1].Remove(off);
+            if (wall.Segments > 0)
+            {
                 Walls[level - 1][off] = wall;
                 WallsAt[level - 1].Add(off);
             }
@@ -616,19 +641,20 @@ namespace FSO.SimAntics
                 Walls[level - 1][off] = new WallTile();
             }
 
-            if (RealMode) WallsDirty = true;
+            if (RealMode)
+                WallsDirty = true;
             Redraw = true;
         }
 
         public WallTile GetWall(short tileX, short tileY, sbyte level)
         {
-            return Walls[level-1][GetOffset(tileX, tileY)];
+            return Walls[level - 1][GetOffset(tileX, tileY)];
         }
 
         public FloorTile GetFloor(short tileX, short tileY, sbyte level)
         {
             var offset = GetOffset(tileX, tileY);
-            return Floors[level-1][offset];
+            return Floors[level - 1][offset];
         }
 
         public bool SetFloor(short tileX, short tileY, sbyte level, FloorTile floor, bool force)
@@ -639,15 +665,19 @@ namespace FSO.SimAntics
             if (!force)
             {
                 //first check if we're supported
-                if (floor.Pattern > 65533 && level > 1 && RoomData[(int)Rooms[level - 2].Map[offset]&0xFFFF].IsOutside) return false;
-                if (level > 1 && !Supported[level - 2][offset]) return false;
+                if (floor.Pattern > 65533 && level > 1 && RoomData[(int)Rooms[level - 2].Map[offset] & 0xFFFF].IsOutside)
+                    return false;
+                if (level > 1 && !Supported[level - 2][offset])
+                    return false;
                 //check if objects need/don't need floors
-                if (!Context.CheckFloorValid(LotTilePos.FromBigTile((short)tileX, (short)tileY, level), floor)) return false;
+                if (!Context.CheckFloorValid(LotTilePos.FromBigTile((short)tileX, (short)tileY, level), floor))
+                    return false;
             }
 
-            Floors[level-1][offset] = floor;
+            Floors[level - 1][offset] = floor;
 
-            if (RealMode) FloorsDirty = true;
+            if (RealMode)
+                FloorsDirty = true;
             Redraw = true;
             return true;
         }
@@ -666,7 +696,7 @@ namespace FSO.SimAntics
                 Width = Width,
                 Height = Height,
                 Stories = Stories,
-        
+
                 Walls = Walls,
                 Floors = Floors,
 
@@ -703,14 +733,15 @@ namespace FSO.SimAntics
         public void RegenWallsAt()
         {
             WallsAt = new List<int>[Stories];
-            for (int i=0; i<Stories; i++)
+            for (int i = 0; i < Stories; i++)
             {
                 var list = new List<int>();
 
                 var wIt = Walls[i];
-                for (int j=0; j<wIt.Length; j++)
+                for (int j = 0; j < wIt.Length; j++)
                 {
-                    if (wIt[j].Segments > 0) list.Add(j);
+                    if (wIt[j].Segments > 0)
+                        list.Add(j);
                 }
                 WallsAt[i] = list;
             }

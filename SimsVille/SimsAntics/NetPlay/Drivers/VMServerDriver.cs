@@ -341,7 +341,7 @@ namespace FSO.SimAntics.NetPlay.Drivers
         public override void CloseNet()
         {
             listener.Close();
-            if (OnShutdown != null) OnShutdown(CloseReason);
+            OnShutdown?.Invoke(CloseReason);
         }
 
         public void BanUser(VM vm, string name)

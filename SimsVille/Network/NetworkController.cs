@@ -325,8 +325,7 @@ namespace FSO.Client.Network
 
             if (TileEntry.lotid != 0)
             {
-                if(OnPlayerJoined != null)
-                    OnPlayerJoined(TileEntry);
+                OnPlayerJoined?.Invoke(TileEntry);
             }
         }
 
@@ -369,8 +368,7 @@ namespace FSO.Client.Network
         {
             UIPacketHandlers.OnCityServerOffline(Client, Packet);
 
-            if (OnCityServerOffline != null)
-                OnCityServerOffline();
+            OnCityServerOffline?.Invoke();
         }
 
         public void _OnTimeOfDay(NetworkClient Client, ProcessedPacket Packet)

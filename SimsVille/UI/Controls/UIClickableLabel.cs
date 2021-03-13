@@ -66,11 +66,7 @@ namespace FSO.Client.UI.Controls
                 case UIMouseEventType.MouseUp:
                     if (m_isDown)
                     {
-                        if (OnButtonClick != null)
-                        {
-                            OnButtonClick(this);
-                            //GameFacade.SoundManager.PlayUISound(1);
-                        }
+                        OnButtonClick?.Invoke(this);
                     }
                     m_isDown = false;
                     break;

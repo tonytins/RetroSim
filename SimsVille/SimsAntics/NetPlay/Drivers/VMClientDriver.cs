@@ -81,7 +81,7 @@ namespace FSO.SimAntics.NetPlay.Drivers
 
         private void Client_OnConnected(LoginArgsContainer LoginArgs)
         {
-            if (OnStateChange != null) OnStateChange(1, 0f);
+            OnStateChange?.Invoke(1, 0f);
         }
 
         public override void SendCommand(VMNetCommandBodyAbstract cmd)

@@ -96,7 +96,7 @@ namespace FSO.Client.UI.Panels
             OKButton.Disabled = true;
             if (ChatEntryTextEdit.CurrentText.Length == 0) return;
 
-            if (OnSendMessage != null) OnSendMessage(ChatEntryTextEdit.CurrentText); 
+            OnSendMessage?.Invoke(ChatEntryTextEdit.CurrentText);
             ChatEntryTextEdit.CurrentText = "";
         }
 

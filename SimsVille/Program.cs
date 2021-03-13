@@ -6,10 +6,10 @@ http://mozilla.org/MPL/2.0/.
 
 using System;
 using System.IO;
-using System.Threading;
-using FSO.Client.Utils.GameLocator;
-using FSO.Client.Utils;
 using System.Reflection;
+using System.Threading;
+using FSO.Client.Utils;
+using FSO.Client.Utils.GameLocator;
 using FSO.Common;
 
 namespace FSO.Client
@@ -25,8 +25,8 @@ namespace FSO.Client
         [STAThread]
         static void Main(string[] args)
         {
-             if (InitWithArguments(args))
-                 (new GameStartProxy()).Start(UseDX);
+            if (InitWithArguments(args))
+                (new GameStartProxy()).Start(UseDX);
 
         }
 
@@ -42,8 +42,10 @@ namespace FSO.Client
 
             ILocator gameLocator;
             bool linux = pid == PlatformID.MacOSX || pid == PlatformID.Unix;
-            if (linux) gameLocator = new LinuxLocator();
-            else gameLocator = new WindowsLocator();
+            if (linux)
+                gameLocator = new LinuxLocator();
+            else
+                gameLocator = new WindowsLocator();
 
             bool useDX = false;
 
@@ -52,7 +54,8 @@ namespace FSO.Client
 
             var path = gameLocator.FindTheSimsOnline();
 
-            if (UseDX) GlobalSettings.Default.AntiAlias = false;
+            if (UseDX)
+                GlobalSettings.Default.AntiAlias = false;
 
             if (path != null)
             {
@@ -64,22 +67,22 @@ namespace FSO.Client
 
                 FSOEnvironment.SimsCompleteDir = simspath;
                 FSOEnvironment.ContentDir = "Content/";
-                FSOEnvironment.GFXContentDir = "Content/" + (useDX ? "DX/" : "OGL/");
+                FSOEnvironment.GFXContentDir = $"Content/{(useDX ? "DX/" : "OGL/")}";
                 FSOEnvironment.Linux = linux;
                 FSOEnvironment.DirectX = useDX;
-                if (GlobalSettings.Default.Language == 0) 
-                GlobalSettings.Default.Language = 1;
+                if (GlobalSettings.Default.Language == 0)
+                    GlobalSettings.Default.Language = 1;
                 Files.Formats.IFF.Chunks.STR.DefaultLangCode = (Files.Formats.IFF.Chunks.STRLangCode)GlobalSettings.Default.Language;
 
                 GlobalSettings.Default.StartupPath = path;
-           
-                
+
+
                 GlobalSettings.Default.Save();
                 return true;
             }
             else
             {
-                
+
                 return false;
             }
         }

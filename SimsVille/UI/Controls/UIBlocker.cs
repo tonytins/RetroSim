@@ -37,7 +37,7 @@ namespace FSO.Client.UI.Controls
 
         private void OnMouse(UIMouseEventType type, UpdateState state)
         {
-            if (OnMouseEvt != null) OnMouseEvt(type, state);
+            OnMouseEvt?.Invoke(type, state);
         }
 
         public void SetSize(int width, int height)

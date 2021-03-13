@@ -1,14 +1,10 @@
-﻿/*
+/*
  * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/. 
  */
 
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
-using System.Media;
 
 namespace FSO.Files.XA
 {
@@ -183,7 +179,7 @@ namespace FSO.Files.XA
             c2right = (int)EATable[HINIBBLE(bInput) + 4];
             dright = (byte)(LONIBBLE(bInput) + 8);  // shift value for right channel
 
-            for (i = 2; i < InputBuffer.Length-1; i += 2)
+            for (i = 2; i < InputBuffer.Length - 1; i += 2)
             {
                 left = HINIBBLE(InputBuffer[i]);  // HIGHER nibble for left channel
                 left = (left << 0x1c) >> dleft;
@@ -237,7 +233,7 @@ namespace FSO.Files.XA
         {
             byte bInput = InputBuffer[0];
             uint i;
-            int c1 = (int)EATable[HINIBBLE(bInput)];	// predictor coeffs
+            int c1 = (int)EATable[HINIBBLE(bInput)];    // predictor coeffs
             int c2 = (int)EATable[HINIBBLE(bInput) + 4];
             int left, c1left, c2left;
             byte d, dleft;

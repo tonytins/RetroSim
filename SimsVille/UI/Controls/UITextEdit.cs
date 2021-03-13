@@ -340,7 +340,7 @@ namespace FSO.Client.UI.Controls
                 {
                     CurrentText = QueuedChange;
                     QueuedChange = null;
-                    if (OnChange != null) OnChange(this);
+                    OnChange?.Invoke(this);
                 }
             }
             if (FSOEnvironment.SoftwareKeyboard && state.InputManager.GetFocus() == this) state.InputManager.SetFocus(null);
@@ -396,10 +396,7 @@ namespace FSO.Client.UI.Controls
 
                     if (inputResult.ContentChanged)
                     {
-                        if (OnChange != null)
-                        {
-                            OnChange(this);
-                        }
+                        OnChange?.Invoke(this);
                     }
 
                     if (inputResult.ContentChanged || inputResult.SelectionChanged)

@@ -476,7 +476,7 @@ namespace FSO.Client.UI.Controls.Catalog
 
         void InnerSelect(UIElement button)
         {
-            if (OnSelectionChange != null) OnSelectionChange(((UICatalogItem)button).Index);
+            OnSelectionChange?.Invoke(((UICatalogItem)button).Index);
         }
 
         public Texture2D GetObjIcon(uint GUID)

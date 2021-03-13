@@ -252,8 +252,8 @@ namespace FSO.Client.UI.Panels
                             if (Holding.InventoryPID > 0) InventoryPlaceHolding();
                             else BuyHolding();
                             ClearSelected();
-                            if (OnPutDown != null) OnPutDown(putDown, state); //call this after so that buy mode etc can produce more.
-                               
+                            OnPutDown?.Invoke(putDown, state); //call this after so that buy mode etc can produce more.
+
                             return;
                         }
                         else
@@ -266,7 +266,7 @@ namespace FSO.Client.UI.Panels
                         
                     }
                     ClearSelected();
-                    if (OnPutDown != null) OnPutDown(putDown, state); //call this after so that buy mode etc can produce more.
+                    OnPutDown?.Invoke(putDown, state); //call this after so that buy mode etc can produce more.
                 }
                 else
                 {
@@ -423,7 +423,7 @@ namespace FSO.Client.UI.Panels
                         Holding.CanDelete = canDelete;
                         Holding.MoveTarget = newHover;
                         Holding.TilePosOffset = new Vector2(objBasePos.x / 16f, objBasePos.y / 16f) - World.State.WorldSpace.GetTileAtPosWithScroll(new Vector2(state.MouseState.X, state.MouseState.Y) / FSOEnvironment.DPIScaleFactor);
-                        if (OnPickup != null) OnPickup(Holding, state);
+                        OnPickup?.Invoke(Holding, state);
                         //ExecuteEntryPoint(12); //User Pickup
                     }
                     else

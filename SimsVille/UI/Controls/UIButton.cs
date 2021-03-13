@@ -313,10 +313,7 @@ namespace FSO.Client.UI.Controls
                     if (!m_isDown)
                     {
                         m_CurrentFrame = 2;
-                        if (OnButtonHover != null)
-                        {
-                            OnButtonHover(this);
-                        }
+                        OnButtonHover?.Invoke(this);
                     }
                     break;
 

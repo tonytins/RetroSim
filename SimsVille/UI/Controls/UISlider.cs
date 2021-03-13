@@ -95,10 +95,7 @@ namespace FSO.Client.UI.Controls
             set
             {
                 m_MinValue = value;
-                if (OnRangeChange != null)
-                {
-                    OnRangeChange(this);
-                }
+                OnRangeChange?.Invoke(this);
             }
         }
 
@@ -122,10 +119,7 @@ namespace FSO.Client.UI.Controls
                     //System.Diagnostics.Debug.WriteLine(newValue);
                     m_LayoutCache.Invalidate("btn");
 
-                    if (OnChange != null)
-                    {
-                        OnChange(this);
-                    }
+                    OnChange?.Invoke(this);
                 }
 
             }
@@ -138,10 +132,7 @@ namespace FSO.Client.UI.Controls
             set
             {
                 m_MaxValue = value;
-                if (OnRangeChange != null)
-                {
-                    OnRangeChange(this);
-                }
+                OnRangeChange?.Invoke(this);
             }
         }
 

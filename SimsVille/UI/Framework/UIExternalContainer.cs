@@ -126,7 +126,7 @@ namespace FSO.Client.UI.Framework
                 RawImage[i] = RawImage[i + 2];
                 RawImage[i + 2] = swap;
             }
-            if (OnFrame != null) OnFrame();
+            OnFrame?.Invoke();
             //batch.Draw(tex, Vector2.Zero, _BlendColor);
         }
 
